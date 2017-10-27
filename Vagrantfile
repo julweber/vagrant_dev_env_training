@@ -27,8 +27,12 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 15671, host: 15671
   config.vm.network :forwarded_port, guest: 25672, host: 25672
 
-
-
   # synced folders
   config.vm.synced_folder "workspace/", "/vagrant/workspace"
+
+  # provisioning script execution
+  config.vm.provision "shell", path: "scripts/initial_setup.sh"
+  config.vm.provision "shell", path: "scripts/install_postgres.sh"
+  config.vm.provision "shell", path: "scripts/install_rabbitmq.sh"
+  config.vm.provision "shell", path: "scripts/install_java.sh"
 end
