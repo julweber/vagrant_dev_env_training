@@ -25,6 +25,7 @@ Vagrant.configure("2") do |config|
   # rabbitmq
   config.vm.network :forwarded_port, guest: 5672, host: 5672
   config.vm.network :forwarded_port, guest: 15671, host: 15671
+  config.vm.network :forwarded_port, guest: 15672, host: 15672
   config.vm.network :forwarded_port, guest: 25672, host: 25672
 
   # synced folders
@@ -32,6 +33,7 @@ Vagrant.configure("2") do |config|
 
   # provisioning script execution
   config.vm.provision "shell", path: "scripts/initial_setup.sh"
+  config.vm.provision "shell", path: "scripts/install_git.sh"
   config.vm.provision "shell", path: "scripts/install_postgres.sh"
   config.vm.provision "shell", path: "scripts/install_rabbitmq.sh"
   config.vm.provision "shell", path: "scripts/install_java.sh"
