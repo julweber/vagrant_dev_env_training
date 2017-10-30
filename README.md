@@ -15,6 +15,13 @@ For a general description about database technologies and choice please have a l
 
 !!! And please never use Redis to store persistent data. Redis should be used only as a cache !!!
 
+# Provisioned Software
+
+* git
+* Java
+* Gradle
+* Utilities (curl, jq, ...)
+
 # Prerequisites
 
 * [Install Virtualbox](https://www.virtualbox.org/wiki/Downloads) **or** [install VmWare](http://www.vmware.com/de/products/player)
