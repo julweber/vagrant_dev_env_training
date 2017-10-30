@@ -37,4 +37,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "scripts/install_postgres.sh"
   config.vm.provision "shell", path: "scripts/install_rabbitmq.sh"
   config.vm.provision "shell", path: "scripts/install_java.sh"
+  config.vm.provision "shell", path: "scripts/install_utilities.sh"
 end
