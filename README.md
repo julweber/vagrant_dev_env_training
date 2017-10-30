@@ -28,11 +28,8 @@ git clone TODO
 # enter the directory
 cd dev_env_training
 
-# start the vagrant machine
-vagrant up
-
-# provision the vagrant machine
-vagrant provision
+# start the vagrant machine & provision software
+vagrant up && vagrant provision
 
 # ssh into the machine when the provisioning process has finished
 vagrant ssh
