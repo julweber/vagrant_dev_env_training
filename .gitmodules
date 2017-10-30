@@ -1,0 +1,3 @@
+[submodule "workspace/examples/spring_api_example_1"]
+	path = workspace/examples/spring_api_example_1
+	url = git@github.com:julweber/spring_api_example_1.git
