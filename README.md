@@ -57,3 +57,16 @@ vagrant provision
 
 The workspace folder is mounted to the VM under /vagrant/workspace.
 Put your files (sources, ...) in this folder to be able to access the files from your guest and host systems.
+
+# Example repository submodules
+
+Example repositories can be cloned automatically to the workspace/examples directory.
+
+```
+# display status for submodules
+git submodule status
+
+# initialize git submodules
+git submodule init
+git submodule update
+```
