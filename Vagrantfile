@@ -34,6 +34,7 @@ Vagrant.configure("2") do |config|
   # provisioning script execution
   config.vm.provision "shell", path: "scripts/initial_setup.sh"
   config.vm.provision "shell", path: "scripts/install_git.sh"
+  config.vm.provision "shell", path: "scripts/install_cf_cli.sh"
   config.vm.provision "shell", path: "scripts/install_postgres.sh"
   config.vm.provision "shell", path: "scripts/install_rabbitmq.sh"
   config.vm.provision "shell", path: "scripts/install_java.sh"
