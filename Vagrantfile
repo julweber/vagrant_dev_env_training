@@ -15,6 +15,9 @@ Vagrant.configure("2") do |config|
   # Forward a second port for multi app usage
   config.vm.network :forwarded_port, guest: 8081, host: 8081
 
+  # Forward sinatra default port
+  config.vm.network :forwarded_port, guest: 4567, host: 4567
+
   # postgresql
   config.vm.network :forwarded_port, guest: 5432, host: 5432
   # mongodb
@@ -38,5 +41,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "scripts/install_postgres.sh"
   config.vm.provision "shell", path: "scripts/install_rabbitmq.sh"
   config.vm.provision "shell", path: "scripts/install_java.sh"
+  config.vm.provision "shell", path: "scripts/install_rvm_and_ruby.sh"
   config.vm.provision "shell", path: "scripts/install_utilities.sh"
 end
