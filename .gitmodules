@@ -1,3 +1,0 @@
-[submodule "workspace/examples/message_rest_client_example"]
-	path = workspace/examples/message_rest_client_example
-	url = git@github.com:julweber/message_rest_client_example.git
