@@ -1,10 +1,10 @@
 set -e
 echo "Updating System packages..."
 echo "Adding webupd8team repo for java installation"
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository -y ppa:linuxuprising/java
 
 echo "Adding cwchien repo for gradle installation"
-sudo add-apt-repository ppa:cwchien/gradle
+sudo add-apt-repository -y ppa:cwchien/gradle
 
 echo "Adding cf cli repo"
 # Add the Cloud Foundry Foundation public key and package repository to your system
