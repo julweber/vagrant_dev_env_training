@@ -7,7 +7,12 @@ It sets up a ubuntu development vm with preinstalled software packages.
 
 The current version installs the following services on the VM:
 * PostgreSQL - [Documentation](http://www.postgresql.org/docs/)
+    * User: vagrant
+    * Password: vagrant
 * RabbitMQ - [Documentation](https://www.rabbitmq.com/documentation.html)
+* MySQL - [Documentation](https://dev.mysql.com/doc/)
+    * User: root
+    * Password: vagrant
 
 All services can be accessed from the host system using their default ports and the host 127.0.0.1. For a list of forwarded ports please refer to the [Vagrantfile](Vagrantfile).
 

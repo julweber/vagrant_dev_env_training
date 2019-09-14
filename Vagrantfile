@@ -18,8 +18,13 @@ Vagrant.configure("2") do |config|
   # Forward sinatra default port
   config.vm.network :forwarded_port, guest: 4567, host: 4567
 
+  # Forward https
+  config.vm.network :forwarded_port, guest: 443, host: 443
+
   # postgresql
   config.vm.network :forwarded_port, guest: 5432, host: 5432
+  #mysql
+  config.vm.network :forwarded_port, guest: 3306, host: 3306
   # mongodb
   config.vm.network :forwarded_port, guest: 27017, host: 27017
   config.vm.network :forwarded_port, guest: 28017, host: 28017
@@ -39,6 +44,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "scripts/install_git.sh"
   config.vm.provision "shell", path: "scripts/install_cf_cli.sh"
   config.vm.provision "shell", path: "scripts/install_postgres.sh"
+  config.vm.provision "shell", path: "scripts/install_mysql.sh"
   config.vm.provision "shell", path: "scripts/install_rabbitmq.sh"
   config.vm.provision "shell", path: "scripts/install_java.sh"
   config.vm.provision "shell", path: "scripts/install_rvm_and_ruby.sh"
