@@ -75,3 +75,46 @@ git submodule status
 git submodule init
 git submodule update
 ```
+
+# Troubleshooting
+
+## Errors on reprovisioning
+
+Error message: "Shared folders that chef requires are missing ...."
+
+    rm .vagrant/machines/default/virtualbox/synced_folders
+    vagrant reload --provision
+
+## Operating behind a Proxy
+
+### Install the vagrant-proxyconf plugin
+
+
+    # if using a proxy:
+    # important: url encode user and password
+    export https_proxy="http://<user>:<password>@proxy_host:proxy_port"
+    export http_proxy="http://<user>:<password>@proxy_host:proxy_port"
+
+    $> vagrant plugin install vagrant-proxyconf
+
+### Add the proxy configuration to your Vagrantfile
+
+    if Vagrant.has_plugin?("vagrant-proxyconf")
+      config.proxy.http     = "http://192.168.0.2:3128/" # exchange correct http proxy here
+      config.proxy.https    = "http://192.168.0.2:3128/" # exchange correct https proxy here
+      config.proxy.no_proxy = "localhost,127.0.0.1,.example.com"
+    end
+
+### Configure gradle to use the proxy
+You need to configure the gradle.properties file in ~/.gradle.
+You can find an example configuration in the gradle.properties file.
+
+## Windows Command log_filename
+
+Please execute the commands above in a command line instance with administrator rights.
+
+## SSH into the machine without using the vagrant client
+
+You can use a normal ssh client (command line, putty, ...) to ssh into the virtual machine. The user and password is vagrant.
+
+    ssh -p 2222  vagrant@127.0.0.1 # pw: vagrant
