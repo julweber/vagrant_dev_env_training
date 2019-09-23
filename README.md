@@ -109,6 +109,12 @@ Error message: "Shared folders that chef requires are missing ...."
 You need to configure the gradle.properties file in ~/.gradle.
 You can find an example configuration in the gradle.properties file.
 
+## Configure git to ignore file system permissions (e.g. Windows shared directory)
+```
+git config --global core.fileMode false
+git config --add --global core.filemode false
+```
+
 ## Windows Command log_filename
 
 Please execute the commands above in a command line instance with administrator rights.
