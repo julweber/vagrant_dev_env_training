@@ -1,7 +1,7 @@
 set -e
 
 HOME=/home/vagrant
-JAVA_VERSION="12"
+JAVA_VERSION="14"
 
 echo "Installing Java and Gradle..."
 echo "Installing Java version: $JAVA_VERSION ..."
@@ -12,7 +12,7 @@ sudo echo "oracle-java$JAVA_VERSION-installer shared/accepted-oracle-license-v1-
 sudo apt-get install -y software-properties-common oracle-java${JAVA_VERSION}-installer gradle
 sudo apt-get install -y oracle-java${JAVA_VERSION}-set-default
 
-if ! sudo cat $HOME/.bashrc | grep "JAVA_HOME" 
+if ! sudo cat $HOME/.bashrc | grep "JAVA_HOME"
 then
   echo "Setting JAVA_HOME in $HOME/.bashrc"
   sudo echo "JAVA_HOME=\"/usr/lib/jvm/java-${JAVA_VERSION}-oracle\"" >> $HOME/.bashrc
