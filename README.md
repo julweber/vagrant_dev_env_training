@@ -23,6 +23,7 @@ For a general description about database technologies and choice please have a l
 # Provisioned Software
 
 * git
+* rvm & ruby
 * Java
 * Gradle
 * Utilities (curl, jq, ...)
