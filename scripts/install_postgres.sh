@@ -1,6 +1,6 @@
 set -e
 echo "Installing postgres..."
-sudo apt-get -y install postgresql postgresql-contrib
+sudo apt-get -y install postgresql postgresql-contrib libpq-dev
 
 # create vagrant user
 sudo -u postgres bash -c "psql -c \"CREATE USER vagrant WITH SUPERUSER PASSWORD 'vagrant';\"" || true
